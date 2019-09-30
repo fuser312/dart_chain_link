@@ -8,11 +8,23 @@
 // https://s1.whiteboardfox.com/s/2ae37dc832647bad.png
 
 
-
+class Link
+{
+  String value;
+  Link next;
+}
 
 main() {
   // Exercise 2:  Create the object structure shown in the above link
   // including the variable called 'firstLink'
+  Link firstLink = Link();
+  firstLink.value = "Raj";
+  firstLink.next = Link();
+  firstLink.next.value = "Makiko";
+  firstLink.next.next = Link();
+  firstLink.next.next.value = "Paul";
+
+  printLink(firstLink);
 
 }
 
@@ -23,11 +35,27 @@ main() {
 // Raj
 // Makiko
 // Paul
+String printLink(Link link) {
+  while(link.next != null){
+    print(link.value);
+    link = link.next;
+  }
+  print(link.value);
+}
 
 
 // Exercise 4: Create a function which takes a Link parameter and a String
 // parameter, and adds another link to the end of the chain.  The new link
 // value should be the String parameter passed into the function.typedef
+void addAnotherLink(Link link, String string){
+
+  while(link.next != null){
+    print(link.value);
+    link = link.next;
+  }
+  link.next = new Link();
+  link.next.value = string;
+}
 
 
 // *** Stretch ****
