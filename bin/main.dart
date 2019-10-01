@@ -53,7 +53,7 @@ void addAnotherLink(Link link, String string){
     print(link.value);
     link = link.next;
   }
-  link.next = new Link();
+  link.next =  Link();
   link.next.value = string;
 }
 
