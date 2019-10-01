@@ -40,7 +40,7 @@ String printLink(Link link) {
     print(link.value);
     link = link.next;
   }
-  return(link.value);
+  print(link.value);
 }
 
 
@@ -64,3 +64,15 @@ void addAnotherLink(Link link, String string){
 // in the chain.  For example, calling insert(firstLink, 2, "A") should
 // update the chain structure to look like this:
 // https://s1.whiteboardfox.com/s/77ff03ee231f2f60.png
+insert(Link firstLink, int index, String value){
+
+  Link newLink = Link();
+  newLink.value = value;
+  newLink.next = null;
+
+  for(int i=0; i<index; i++){
+    firstLink = firstLink.next;
+  }
+  newLink.next = firstLink.next;
+  firstLink.next = newLink;
+}
