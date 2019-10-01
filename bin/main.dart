@@ -40,7 +40,7 @@ String printLink(Link link) {
     print(link.value);
     link = link.next;
   }
-  print(link.value);
+  return(link.value);
 }
 
 
